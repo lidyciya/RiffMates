@@ -1,15 +1,15 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>RiffMates News</title>
-    </head>
-    <body>
+{% extends "base.html" %
+
+{% block title %}
+    {{ block.suoer }}: News
+ {% endblock title %}
+
+ {% block content %}
         <h1>RiffMates News</h1>
         <ul>
             {% for item in news %}
                 <1i>{{ item }}</1i>
             {% endfor %}
         </ul>
-    </body>
-</html>
+        <a href="{% url 'credits' %}>Credits</a>
+{% endblock content %}
