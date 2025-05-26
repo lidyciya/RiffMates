@@ -1,15 +1,13 @@
-{% extends "base.html" %
-
+{% extends "base.html" %}
 {% block title %}
-    {{ block.suoer }}: News
- {% endblock title %}
+    {{ block.super }}: News
+{% endblock title %}
 
- {% block content %}
-        <h1>RiffMates News</h1>
-        <ul>
-            {% for item in news %}
-                <1i>{{ item }}</1i>
-            {% endfor %}
-        </ul>
-        <a href="{% url 'credits' %}>Credits</a>
-{% endblock content %}
+ {% block body %}
+    <h1>RiffMates News</h1>
+    <ul>
+        {% for item in news %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endblock body %}
