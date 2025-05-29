@@ -14,5 +14,16 @@
         {% empty %}
         <li><i>No musicians in the database</i></li>
     {% endfor %}
-    {% endblock body %}
+
+    {% if page.has_other_pages %}
+      {% if page.has_previous %}
+      <a href="{% url 'musician' %}?page={{ pagne.previous_page_number }}"
+        >Prev</a> &nbsp;&nbsp;&nbsp;
+       {% endif %}
+    {% if page.has_next %}
+        <a href="{% url 'musicians' %}?page={{ page.next_page_number }}"
+        >Next</a>
+      {% endif %}
+    {% endif %}
+{% endblock body %}
  </ul>
